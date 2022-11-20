@@ -1,4 +1,5 @@
-public class soal_satu {
+package Soal1;
+public class Main {
     public static void main(String[] args) {
         int[] angka = {1,5,2,3,6,8,7,10,14,12,19,21,28,22,27};
 
