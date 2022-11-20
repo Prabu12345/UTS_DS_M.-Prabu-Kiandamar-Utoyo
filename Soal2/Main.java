@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner inputData = new Scanner(System.in);
         int[] angka = new int[10];
 
         System.out.println("----{{ Menentukan Gajil/Genap Dengan short bubble/selection }}----");
@@ -12,35 +12,26 @@ public class Main {
             System.out.println("Dibutuhkan " + (10 - i) + " angka lagi untuk memulai program");
             System.out.print("Masukan angka: ");
 
-            int inputAngka = input.nextInt();
+            int inputAngka = inputData.nextInt();
             Array.setInt(angka, i, inputAngka);
         }
 
         // Shorting Angka Ganjil (Selection)
+        System.out.println("Angka Ganjil - Selection Sort");
         int[] angkaGanjil = angka;
         angkaGanjil = deleteGajil(angkaGanjil);
         selectionShort(angkaGanjil);
+        for (int i = 0; i < angkaGanjil.length; i++) {
+            System.out.println(angkaGanjil[i]);
+        }
 
         // Shorting Angka Genap (Bubble)
+        System.out.println("Angka Genap - Bubble Sort");
         int[] angkaGenap = angka;
         angkaGenap = deleteGenap(angkaGenap);
         bubbleShort(angkaGenap);
-
-        // Menggabungkan Array
-        angka = new int[angkaGanjil.length+angkaGenap.length];
-        for(int i=0;i<angkaGanjil.length;i++) {
-            angka[i] = angkaGanjil[i];
-        }
-        for(int i=0;i<angkaGenap.length;i++) {
-            angka[angkaGanjil.length+i] = angkaGenap[i];
-        }
-        
-        for (int i = 0; i < angka.length; i++) {
-            if (angka[i] % 2 == 0) {
-                System.out.println(angka[i] + " - Genap");
-                continue;
-            }
-            System.out.println(angka[i] + " - Ganjil");
+        for (int i = 0; i < angkaGenap.length; i++) {
+            System.out.println(angkaGenap[i]);
         }
     }
 
